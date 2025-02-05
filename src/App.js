@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { createLogger } from './Logger/createLogger';
 
 function App() {
+  const logger = createLogger()
+
+  console.log(logger, 'what is logger')
+
   return (
     <div className="App">
       <header className="App-header">
