@@ -17,17 +17,22 @@ describe("createLogger()", async assert => {
     const logSpy = sinon.spy()
     const logger = createLogger(logSpy, { nowDate })
     
-    logger.debug('log debug', testData)
-    logger.info('log info', testData)
-    logger.warn('log warn', testData)
-    logger.error('log error', testData)
-    logger.fatal('log fatal', testData)
+    logger.debug("log debug", testData)
+    logger.info("log info", testData)
+    logger.warn("log warn", testData)
+    logger.error("log error", testData)
+    logger.fatal("log fatal", testData)
 
     assert({
       given: "calls for each public log method",
       should: "call the underlying LogFn with expected data",
       actual: [
         logSpy.callCount,
+        logSpy.getCall(0).args[0]
+      ],
+      expected: [
+        2,
+        "log debug"
       ]
     })
   }

@@ -1,3 +1,5 @@
-export const createLogger = () => ({
-  name: "logger"
+export const createLogger = (fn, dateObj) => ({
+  debug: () => {
+    fn()
+  }
 })
