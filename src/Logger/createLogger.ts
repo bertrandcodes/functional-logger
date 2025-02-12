@@ -1,5 +1,6 @@
 export const createLogger = (fn, dateObj) => ({
-  debug: () => {
-    fn()
+  debug: (messageString, data) => {
+    fn(messageString)
+    return messageString
   }
 })
