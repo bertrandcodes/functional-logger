@@ -1,28 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import { createLogger } from './Logger/createLogger';
 
 function App() {
   const logger = createLogger()
 
-  console.log(logger, 'what is logger')
+  logger.debug("check it out")
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      A custom functional logger implementation.
     </div>
   );
 }

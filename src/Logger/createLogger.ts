@@ -1,6 +1,11 @@
-export const createLogger = (fn, dateObj) => ({
+export const createLogger = (log = createAppLogFn(), dateObj) => ({
   debug: (messageString, data) => {
-    fn(messageString)
-    return messageString
-  }
-})
+    log(messageString);
+  },
+});
+
+const createAppLogFn = () => {
+  return (arg) => {
+    console.log(arg, "logging args");
+  };
+};
