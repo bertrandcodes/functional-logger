@@ -4,7 +4,7 @@ import { createLogger } from './Logger/createLogger';
 function App() {
   const logger = createLogger()
 
-  logger.debug("check it out")
+  logger.debug("check it out", "data")
 
   return (
     <div className="App">
