@@ -1,6 +1,6 @@
-export const createLogger = (log = createAppLogFn()) => ({
+export const createLogger = (logFn = createAppLogFn()) => ({
   debug: (message, auditData = {}) => {
-    log({
+    logFn({
       level: "debug",
       message,
       auditData,
@@ -14,12 +14,15 @@ export const createLogger = (log = createAppLogFn()) => ({
 // error
 // fatal
 
-const createAppLogFn = () => {
-  return (arg) => {
-    if (arg.level === "debug") {
-      console.log(arg, "logging args");
-    } else {
-      console.log("ignore");
-    }
-  };
+/**
+ * 
+ * @returns default log function that takes in logData and passes it through consoleLogger and aggregatorLogger
+ */
+
+const createAppLogFn = () => (arg) => {
+  if (arg.level === "debug") {
+    console.log(arg, "logging args");
+  } else {
+    console.log("ignore");
+  }
 };
