@@ -15,11 +15,12 @@ export const createLogger = (logFn = createAppLogFn()) => ({
 // fatal
 
 /**
- * 
+ *
  * @returns default log function that takes in logData and passes it through consoleLogger and aggregatorLogger
  */
 
 const createAppLogFn = () => (arg) => {
+  // update this
   if (arg.level === "debug") {
     console.log(arg, "logging args");
   } else {
