@@ -8,11 +8,11 @@ export const createLogger = (logFn = createAppLogFn()) => ({
   },
 });
 
-// debug
-// info
-// warn
-// error
-// fatal
+// Debug
+// Info
+// Warn
+// Error
+// Fatal
 
 /**
  *
