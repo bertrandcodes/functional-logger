@@ -7,8 +7,6 @@ describe("createLogger()", () => {
       url: "www.sampleurl.com",
       data: { field1: "foo", field2: 2, field3: true },
     };
-    // const timeStamp = new Date(1970, 0, 1);
-    // const nowDate = () => timeStamp;
 
     const logSpy = sinon.spy();
     const logger = createLogger(logSpy);
